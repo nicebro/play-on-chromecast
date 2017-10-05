@@ -1,0 +1,133 @@
+body.poc-init > .poc-container {
+    display: flex;
+}
+
+.poc-container {
+  width: 640px;
+  height: 360px;
+  background: #111;
+  vertical-align: middle;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 100000;
+  display: none;
+}
+
+.poc-background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  filter: blur(10px);
+  height: 100%;
+}
+
+.poc-background-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.poc-inner-container {
+  max-width: 60%;
+  max-height: 60%;
+  position: relative;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  flex: 1 0 100%;
+  height: 100%;
+}
+
+.poc-poster-container {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.poc-title {
+  position: absolute;
+  padding: 1em;
+  text-shadow: 1px 1px 1px #000;
+  color: white;
+  text-align: left;
+  max-width: 100%;
+  font-size: 1.4rem;
+  z-index: 1;
+}
+
+.poc-poster-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.poc-action-buttons {
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+}
+.poc-action-buttons > * {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  white-space: pre;
+  overflow: hidden;
+  padding: 1em 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  transition: background 1s;
+}
+
+.poc-action-buttons > *:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.poc-action-buttons > *:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(75, 75);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(140, 140);
+  }
+}
+
+.poc-action-buttons > *:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+

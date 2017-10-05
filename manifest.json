@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"name": "Play on Chromecast",
+	"description": "Allows you to play videos from any web site on Chromecast device.",
+	"version": "1.0.3",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+	"background": {
+		"persistent": false,
+		"scripts": ["components/background/background.js"]
+	},
+	"browser_action": {
+		"default_icon": "enabled.png",
+		"default_title": "Play on Chromecast",
+        "default_popup": "components/popup/popup.html"
+	},
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"storage",
+		"contextMenus",
+        "webNavigation",
+		"http://*/*",
+		"https://*/"
+	],
+	"web_accessible_resources": [
+		"/injections/*.js",
+		"*www.gstatic.com*"
+	]
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-cast-api-enabled="true">
+	<meta charset="UTF-8">
+	<title>Play on Chromecast Player</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="video-js.css" rel="stylesheet">
+	<link href="dragula.min.css" rel="stylesheet">
+	<link href="./video.js-plugins/playlist-ui/videojs-playlist-ui.vertical.css" rel="stylesheet">
+	<link href="./video.js-plugins/chromecast/videojs-chromecast.css" rel="stylesheet">
+	<link href="./video.js-plugins/resolution-switcher/videojs-resolution-switcher.css" rel="stylesheet">
+	<link href="player.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+		<div class="player-container">
+			<div class="video-container">
+				<video
+					id="video"
+					class="video-js vjs-fluid"
+					preload="auto"
+					width="840"
+					height="473"
+					data-setup_="{}"
+				>
+				</video>
+			</div>
+			<div class="video-title"></div>
+			<div class="video-description"></div>
+		</div>
+
+		<div class="playlist-container">
+			<div class="playlist"></div>
+		</div>
+	</div>
+
+
+
+	<script src="cast_sender.js"></script> <!-- add chromecast sdk -->
+	<script src="video.js"></script>
+	<script src="videojs-contrib-hls.js"></script>
+	<script src="dragula.min.js"></script>
+	<script src="./video.js-plugins/chromecast/videojs-chromecast.js"></script>
+	<script src="./video.js-plugins/playlist/videojs-playlist.js"></script>
+	<script src="./video.js-plugins/playlist-ui/videojs-playlist-ui.min.js"></script>
+	<script src="./video.js-plugins/resolution-switcher/videojs-resolution-switcher.js"></script>
+	<script src="player.js"></script>
+</body>
+</html>
